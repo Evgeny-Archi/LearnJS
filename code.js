@@ -35,4 +35,11 @@ function showAnswer(eventObj) {
   let name = image.id;
   name = "img/" + name + ".jpg";
   image.src = name;
+
+  // возвращает картинку с блюром через 1 сек.
+  setTimeout(() => {
+    name = "img/" + image.id + "blur.jpg";
+    image.src = name;    
+  }, 1000);
 }
+
