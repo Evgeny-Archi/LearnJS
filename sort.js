@@ -44,13 +44,6 @@ function compareName(cola1, cola2) {
   }
 }
 
-let table = document.getElementById("table");
-
-for (let i = 0; i < products.length; i++) {
-    table.innerHTML = "<tr><td>" + products[i].name + 
-    "</td><td>" + products[i].calories + "</td></tr>";
-}
-
 products.sort(compareSold);
 printProducts(products);
 
