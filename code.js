@@ -1,70 +1,49 @@
-// Простой пример замыкания
-// function createCalcFun(n) {
-//     return function createCalc() {
-//         return 1000 * n;
-//     }
+// // Конструктор объекта
+// function Coffee(name, ml) {
+//   this.name = name;
+//   this.ml = ml;
+//   this.getSize = () => {
+//     let volume =
+//       this.ml <= 8 && this.ml > 0
+//         ? "small"
+//         : this.ml >= 8 && this.ml <= 12
+//         ? "medium"
+//         : this.ml <= 16 && this.ml >= 12
+//         ? "large"
+//         : "NaN";
+//     return volume;
+//   };
+//   this.toString = () => {
+//     return "You have " + this.getSize() + " " + this.name + " coffee";
+//   };
+// }
+// let blend = new Coffee("Blend", 10);
+// console.log(blend.toString());
+// let house = new Coffee("House black", 5);
+// console.log(house.toString());
+
+
+// function MakeCar(params) {
+//   for (let key in params) {
+//     this[key] = params[key];
+//   }
+//   this.started = false;
+//   this.start = () => {
+//     this.started = true;
+//   };
+//   this.stop = () => {
+//     this.started = false;
+//   };
 // }
 
-// const calc = createCalcFun(3);
-// console.log(calc());
+// let cadi = new MakeCar({ make: "GM", name: "Cadi", mileage: 123 });
+// console.log(cadi);
+// let fiat = new MakeCar({ make: "MG", name: "Fiat", mileage: 2321 });
+// console.log(fiat);
+// console.log(fiat instanceof MakeCar);
 
-// Второй пример замыкания
-// function createIncrement(n) {
-//     return (num) => {
-//         return n + num;
-//     }
-// }
-
-// const addOne = createIncrement(1);
-// const addTen = createIncrement(10);
-
-// console.log(addOne(2));
-// console.log(addTen(3));
-
-// Пример:
-/*
-function logPerson() {
-    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
+function fun(param) {
+    return 1;
 }
 
-function bind(context, fn) {
-    return function(...args) {
-        fn.apply(context, args);
-    }
-}
-
-const person1 = {name: "Misha", age: 22, job: "Frontend"};
-const person2 = {name: "Elena", age: 19, job: "SMM"};
-
-bind(person1, logPerson)();
-bind(person2, logPerson)();
-*/
-
-/* Счетчик нажатий
-window.onload = () => {
-    let click = document.getElementById("clickme");
-    let message = document.getElementById("message");
-    let count = 0;
-    click.onclick = () => {
-        count++;
-        message.innerHTML = `You click me ${count} times`;
-    }
-}
-*/
-
-function makeCounter() {
-    let count = 0;
-    return {
-        increment: () => {
-            count++;
-            return count;
-        }
-    };
-}
-
-let counter = makeCounter();
-
-console.log(counter.increment());
-console.log(counter.increment());
-console.log(counter.increment());
-console.log(counter.increment());
+console.log(fun.prototype);
