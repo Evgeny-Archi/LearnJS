@@ -1,9 +1,21 @@
-let msg = document.querySelector(".input");
-let button = document.querySelector("button");
-let out = document.querySelector(".out");
+// Input
+// document.querySelector("button").onclick = function() {
+//     let input = document.querySelector(".input").value;
+//     console.log(input);
+// }
+// document.querySelector(".input").oninput = () => {
+//     let input = document.querySelector(".input").value;
+//     document.querySelector(".out").innerHTML = input;
+// }
 
-button.onclick = function() {
-  console.log(msg.value);
-  out.innerHTML = msg.value;
-  msg.value = "";
-};
+// Checkbox
+// document.querySelector("#btn").onclick = () => {
+//     let out = document.querySelector("#check");
+//     console.log(out.checked);
+// }
+
+document.querySelector("#btn").onclick = (event) => {
+    event.preventDefault();
+    let form = document.querySelector("form");
+    console.log(form);
+}
