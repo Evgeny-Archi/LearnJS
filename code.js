@@ -1,21 +1,25 @@
-// Input
-// document.querySelector("button").onclick = function() {
-//     let input = document.querySelector(".input").value;
-//     console.log(input);
-// }
-// document.querySelector(".input").oninput = () => {
-//     let input = document.querySelector(".input").value;
-//     document.querySelector(".out").innerHTML = input;
-// }
+// Эффект печатной машинки
+// let text = "Lorem ipsum dolor sit amet.\n Some text";
+// let count = 0;
 
-// Checkbox
-// document.querySelector("#btn").onclick = () => {
-//     let out = document.querySelector("#check");
-//     console.log(out.checked);
+// function typeText() {
+//     if (count < text.length) {
+//         document.querySelector(".out").textContent += text[count];
+//         count++;
+//         setTimeout(typeText, 100);
+//     }
 // }
+// typeText();
 
-document.querySelector("#btn").onclick = (event) => {
-    event.preventDefault();
-    let form = document.querySelector("form");
-    console.log(form);
+let test = document.querySelectorAll(".test");
+let subTest = document.querySelectorAll(".sub-test");
+
+for (let i = 0; i < test.length; i++) {
+    console.log(test[i].classList);
+    test[i].onclick = function() {
+        subTest[i].classList.toggle("sub-test2");
+    }
 }
+
+
+
