@@ -20,7 +20,9 @@ fetch('http://api.openweathermap.org/data/2.5/weather?id=2013348&appid=8474fe60b
     .then(function(data) {
         console.log(data);
         document.querySelector(".city").textContent = data.name;
-        document.querySelector(".temp").textContent = (data.main.temp - 273.15) + " C";
+        document.querySelector(".temp").innerHTML = (data.main.temp - 273.15) + " &deg;C";
+        document.querySelector(".weather").textContent = data.weather[0].description;
+        document.querySelector(".icon").innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">`;
     })
     .catch(function() {
         // catch any errors
