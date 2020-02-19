@@ -75,10 +75,33 @@ let par2 = document.querySelectorAll("p");
 */
 
 // Map() Filter()
-/*
+/* map()
 let a = [4, 5, 1, 20, 0, -2, 100];
-let b = a.map(function(item, index) { // Перебирает каждый элемент и возвращает новое значение
+let b = a.map(function(item, index) { // Перебирает каждый элемент и возвращает новый массив
     console.log(item, index);
     return item + 1;    
 }); */
 // let b = a.map(item => item + 1) Аналогично функции выше
+
+/* filter()  Перебирает массив и фильтрует по функции  
+let a = [4, 5, 1, 20, 0, -2, 100, "asdl"];
+let b = a.filter(item => typeof item === "number")
+console.log(b);
+*/
+
+/*
+// Split() Разделяет строку и разбивает на массив по сепаратору " "
+let a = "Loerm ipsum hello, world";
+console.log(a.split(" "));
+
+// Join() Соединяет массив в строку
+let b = [4, 5, 1, 20, 0, -2, 100, "asdl"];
+console.log(b.join(" "));
+
+// forEach() Аналогично map(), но не возвращает новый массив. Не меняет текущий
+let b = [4, 5, 1, 20, 0, -2, 100, "asdl"];
+b.forEach(function(item, index) {
+    console.log(item * 2, index);
+});
+*/
+
