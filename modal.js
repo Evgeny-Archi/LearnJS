@@ -42,3 +42,4 @@ $.modal = function(options) {
 const modal = $.modal();
 
 // Вызов через консоль modal.open()
+// Добавить в стилях класс .open {display: block;}
