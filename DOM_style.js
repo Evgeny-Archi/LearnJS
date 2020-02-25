@@ -7,7 +7,7 @@ one.classList.remove("three"); // Удаляет класс
 const btn = document.querySelector(".btn");
 
 btn.onclick = () => {
-    btn.classList.toggle("two"); // Добавляет и удалет класс при нажатии
+    btn.classList.toggle("two"); // Добавляет и удаляет класс при нажатии
     // this. не работает со стрелочными фу-ми
 }
 
