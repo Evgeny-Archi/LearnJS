@@ -14,6 +14,25 @@ function text() {
 }
 text()
 
+// Бегущие цифры
+const time = 1000;
+const step = 100;
+
+function outNum(num, elem) {
+  const out = document.querySelector("." + elem);
+  let n = 0;
+  let t = Math.round(time / (num / step));
+
+  let interval = setInterval(() => {
+    n += step;
+    if (n == num) {
+      clearInterval(interval);
+    }
+    out.textContent = n;
+  }, t);
+}
+outNum(1000, "out");
+
 
 let one = document.querySelector(".one");
 
