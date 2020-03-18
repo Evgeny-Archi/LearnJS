@@ -7,8 +7,10 @@ const sliderInit = (function() {
         
         const wrapWidth = parseFloat(getComputedStyle(mainSliderWrap).width); // Ширина обертки
         const itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width); // Ширина элемента слайдера
-        let step = (itemWidth / wrapWidth) * 100; // Шаг прокрутки (зависит от кол-ва элементов на странице
-        let transform = 0;
+        let step = (itemWidth / wrapWidth) * 100; // Шаг прокрутки (зависит от кол-ва элементов на странице)
+        let transform = 0;  // Конечная цифра прокрутки
+        let boardPosition = 0; // Счетчик для ограничения прокрутки
+
         
         // Выбор направления (left, right) и его передача функции
         function controlClick(event) {
@@ -23,9 +25,12 @@ const sliderInit = (function() {
         // Назначения стиля обертке слайдера в зависимости от направления
         function transformItem(direction) {
             if (direction === 'left') {
+                if (boardPosition <= 0) return; // Ограничивает прокрутку, когда элементы закончились
+                boardPosition--;
                 transform += step;
-                
             } else {
+                if (boardPosition + wrapWidth / itemWidth >= sliderItems.length) return; // Ограничивает прокрутку, когда элементы закончились
+                boardPosition++;
                 transform -= step;
             }
             mainSliderWrap.style.transform = `translateX(${transform}%)`;
